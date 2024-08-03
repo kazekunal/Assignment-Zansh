@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const NavLink = ({ href, title }) => {
+const Navlink = ({ href, title }) => {
   return (
     <Link
       href={href}
@@ -11,4 +11,4 @@ const NavLink = ({ href, title }) => {
   );
 };
 
-export default NavLink;
+export default Navlink;

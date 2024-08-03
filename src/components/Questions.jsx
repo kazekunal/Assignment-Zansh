@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import Modal from './modal'
+import Modal from './Modal'
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import {
@@ -10,7 +10,7 @@ import {
   } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import {
+import {                                           
     Select,
     SelectContent,
     SelectItem,
