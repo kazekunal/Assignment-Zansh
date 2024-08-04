@@ -2,7 +2,7 @@ import React from 'react'
 
 const Question_cards = (props) => {
   return (
-    <div className="relative h-40 w-screen flex flex-col">
+    <div className="absolute h-40 w-maxcontent flex flex-col">
         {props.children}
     </div>
   )

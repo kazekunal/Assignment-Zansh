@@ -10,7 +10,7 @@ import {
   } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import {                                           
+import {
     Select,
     SelectContent,
     SelectItem,
@@ -48,6 +48,12 @@ const Questions = () => {
         new_setQuestionPopup(true);
     }
 
+    const handleSubmitDelete = (event) =>{
+        setQuestionPopup(false);
+        setShowInitialMessage(true);
+    }
+    
+
   return (
     <div>
     {showInitialMessage && (
@@ -80,8 +86,8 @@ const Questions = () => {
     )}
         <Modal trigger={buttonpopup}>
             <div className='fixed h-full w-screen'>
-                <div id='question_modal' className="relative left-72 top-20">
-                    <Card id='question_modal' className=" bg-[#F9FAFB]">
+                <div id='question_modal' className="relative  left-72 top-20">
+                    <Card id='question_modal' className="order-1 bg-[#F9FAFB]">
                         <CardContent>
                             <form>
                                 <div className="grid items-center gap-4">
@@ -136,7 +142,7 @@ const Questions = () => {
 <div className='flex flex-col gap-2 h-max'>
         {questionpopup && (
             <Question_cards trigger={questionpopup}>
-                <div className="flex flex-row w-max mt-4 gap-3 rounded p-4 bg-[#F9FAFB]">
+                <div className="flex flex-row w-max mt-4 gap-3 z-0 rounded p-4 bg-[#F9FAFB]">
                     <span>1.</span>
                     
                     <div className='flex flex-col'>
@@ -144,8 +150,8 @@ const Questions = () => {
                     <p className='text-sm text-[#475467] relative w-72 mt-2 mr-6'>{questiontype}</p>
                     </div>
 
-                    <Button variant="outline">Edit</Button>
-                    <Button variant="outline" className="bg-[#F4EDED]">
+                    <Button onClick = {handleSubmitAdd} variant="outline">Edit</Button>
+                    <Button onClick = {handleSubmitDelete} variant="outline" className="bg-[#F4EDED]">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#8F0D0D" className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
                     </svg>
@@ -156,17 +162,18 @@ const Questions = () => {
                     </svg>
                     </Button>
                 </div>
-                <Button onClick={handleQuestionSubmit} className="bg-[#002924] text-sm text-white hover:bg-[#383838] hover:text-white w-12 mt-3" variant="outline">
+                {/* <Button onClick={handleQuestionSubmit} className="bg-[#002924] text-sm text-white hover:bg-[#383838] hover:text-white w-12 mt-3" variant="outline">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
-                </Button>
+                </Button> */}
                 
             </Question_cards>
             
         )}
+
         {new_questionpopup && (
-            <Question_cards className="flex flex-col" trigger={questionpopup}>
+            <Question_cards className="flex flex-col" trigger={new_questionpopup}>
                 <div className="flex flex-row w-max mt-4 gap-3 rounded p-4 bg-[#F9FAFB]">
                     <span>2.</span>
                     <div className='flex flex-col'>
@@ -186,7 +193,7 @@ const Questions = () => {
                     </svg>
                     </Button>
                 </div>
-                <Button onClick={handleSubmit} className="bg-[#002924] text-sm text-white hover:bg-[#383838] hover:text-white w-12 mt-3" variant="outline">
+                <Button className="bg-[#002924] text-sm text-white hover:bg-[#383838] hover:text-white w-12 mt-3" variant="outline">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
