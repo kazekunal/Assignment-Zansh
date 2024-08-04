@@ -44,9 +44,10 @@ const Questions = () => {
         setShowInitialMessage(false);
     }
 
-    const handleQuestionSubmit = (event) =>{
-        new_setQuestionPopup(true);
-    }
+    // used for adding a new card
+    // const handleQuestionSubmit = (event) =>{
+    //     new_setQuestionPopup(true);
+    // }
 
     const handleSubmitDelete = (event) =>{
         setQuestionPopup(false);
@@ -162,6 +163,7 @@ const Questions = () => {
                     </svg>
                     </Button>
                 </div>
+                {/* this button can be used to add a new question */}
                 {/* <Button onClick={handleQuestionSubmit} className="bg-[#002924] text-sm text-white hover:bg-[#383838] hover:text-white w-12 mt-3" variant="outline">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -172,7 +174,9 @@ const Questions = () => {
             
         )}
 
-        {new_questionpopup && (
+        {/* this is the new question card code which when the above button is clicked will show the new card */}
+
+        {/* {new_questionpopup && (
             <Question_cards className="flex flex-col" trigger={new_questionpopup}>
                 <div className="flex flex-row w-max mt-4 gap-3 rounded p-4 bg-[#F9FAFB]">
                     <span>2.</span>
@@ -200,7 +204,7 @@ const Questions = () => {
                 </Button>
             </Question_cards>
             
-        )}
+        )} */}
         
         </div>
     </div>
